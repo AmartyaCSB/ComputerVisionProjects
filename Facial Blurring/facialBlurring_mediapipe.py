@@ -27,7 +27,7 @@ def process_img(img, face_detection):
             # print(x1, y1, w, h)
 
             # blur faces
-            img[y1:y1 + h, x1:x1 + w, :] = cv2.blur(img[y1:y1 + h, x1:x1 + w, :], (30, 30))
+            img[y1:y1 + h, x1:x1 + w, :] = cv2.blur(img[y1:y1 + h, x1:x1 + w, :], (50, 50))
 
     return img
 
