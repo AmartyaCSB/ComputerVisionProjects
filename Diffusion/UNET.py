@@ -36,7 +36,19 @@ class DownSample(nn.Module):
 
     def forward(self, x: torch.Tensor):
         return self.pool(x)
-    
+
+class UpSample(nn.Module):
+    '''
+    Eachstep in the expansive path up-samples the feature map with a 2X2 up-convolution
+    '''
+    def __init__(self, in_channels: int, out_channels: int):
+        super().__init__()
+
+        self.up = nn.ConvTranspose2d(in_channels, out_channels, kernel_size=2, stride=2)
+
+    def forward(self, x:torch.Tensor):
+        return self.up(x)
+
 # Work in Progress
 
 
